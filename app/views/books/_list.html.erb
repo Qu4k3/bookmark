@@ -1,0 +1,12 @@
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.author %></td>
+    <td><%= book.description %></td>
+    <td><%= book.editorial %></td>
+    <td><%= book.weeks_on_list %></td>
+    <td><%= book.current_week_ranking %></td>
+    <td><%= link_to "<span class='glyphicon glyphicon-edit' aria-hidden='true'></span>".html_safe, edit_book_path(book), remote: true, class: "btn btn-primary" %></td>
+    <td><%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>".html_safe, book_delete_path(book), remote: true, class: "btn btn-danger" %></td>
+  </tr>
+<% end %>
